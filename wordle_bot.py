@@ -106,9 +106,34 @@ def second_guess(pattern):
 # Function for readablilty and stats
 def words_left(words):
     print("There are now " + str(len(words)) + " possible words.")
-    if len(words) <= 5:
+    if len(words) <= 10:
         print(words)
     print("\n")
+
+
+# Get input from user
+def get_input():
+    # Initially set flag to False
+    flag = False
+
+    while flag == False:
+        # Set flag to true at the beginning of each loop
+        flag = True
+        # Ask for input
+        inp = input("What is the pattern that was returned?\n(Use G to indicate green letters, Y to indicate yellow letters and * to indicate black letters)\n")
+        # Check input length
+        if len(inp) != 5:
+            print("Improper input length.")
+            flag = False
+        else:
+            # Check characters of input
+            for i in range(len(inp)):
+                if inp[i].upper() != "Y" and inp[i].upper() != "G" and inp[i].upper() != "*":
+                    print("Improper input characters")
+                    flag = False
+                    break
+        if flag == True:
+            return inp
 
 
 # Wordle solver
@@ -124,7 +149,7 @@ def solve():
             # First guess
             print("\nThe word you should guess is:\nSLATE")
             # Get pattern returned from user
-            pattern = input("What is the pattern that was returned?\n(Use G to indicate green letters, Y to indicate yellow letters and * to indicate black letters)\n")
+            pattern = get_input()
             # End condition
             if pattern == "GGGGG":
                 print("Good stuff.\n")
@@ -140,7 +165,7 @@ def solve():
             next_guess = second_guess(pattern)
             # Get pattern returned from user
             print("The word you should guess is:\n" + next_guess.upper())
-            pattern = input("What is the pattern that was returned?\n")
+            pattern = get_input()
             # End condition
             if pattern == "GGGGG":
                 print("Good stuff.\n")
@@ -156,7 +181,7 @@ def solve():
             next_guess = words[0]
             print("The word you should guess is:\n" + next_guess.upper())
             # Get pattern returned from user
-            pattern = input("What is the pattern that was returned?\n")
+            pattern = get_input()
             # End condition
             if pattern == "GGGGG":
                 print("Good stuff.\n")
