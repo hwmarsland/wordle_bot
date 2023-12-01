@@ -40,8 +40,6 @@ removedletters = []
 # Cutting down word list
 def cut_down(pattern, guess, words):
 
-    basepattern = '.....'
-
     # First search to collect any green letters
     for i in range(len(pattern)):
 
