@@ -149,7 +149,7 @@ def solve():
             # Get pattern returned from user
             pattern = get_input()
             # End condition
-            if pattern == "GGGGG":
+            if pattern.upper() == "GGGGG":
                 print("Good stuff.\n")
                 break
             # Cut down list
@@ -165,7 +165,7 @@ def solve():
             print("The word you should guess is:\n" + next_guess.upper())
             pattern = get_input()
             # End condition
-            if pattern == "GGGGG":
+            if pattern.upper() == "GGGGG":
                 print("Good stuff.\n")
                 break
             # Cut down list
@@ -181,7 +181,7 @@ def solve():
             # Get pattern returned from user
             pattern = get_input()
             # End condition
-            if pattern == "GGGGG":
+            if pattern.upper() == "GGGGG":
                 print("Good stuff.\n")
                 break
             # Cut down list

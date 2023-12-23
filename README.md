@@ -13,6 +13,14 @@ PROGRAM STEPS
 - Based on the pattern returned by the user, slims down the potential words list and chooses the optimal second word and suggests it to the user
 - Then until the correct word is selected, based on the previous pattern returned by the user the program slims down the potential words list, selects the first word from that list and suggests it to the user.
 
+TESTING
+- On 100 tests, average words for a correct guess was 3.44
+  - 95% win rate (1 program error, 4 losses due to not guessing the word within 6 guesses)
+  - 58 times won on 3rd guess
+  - 32 times won on 4th guess
+  - 5 times won on 5th guess
+- Testing history can be seen in the wordle_bot_successes.xlsx file
+
 CREDITS
 - The optimal second words file is a slimmed down version of Charles Zaiontz's table of optimal second wordle guesses following SLATE.
   - The article can be found at https://real-statistics.com/wordle-strategy/best-first-two-guesses-wordle/#:~:text=If%20we%20don%27t%20need,only%209%20non%2Dzero%20patterns.
